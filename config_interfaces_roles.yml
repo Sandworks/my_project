@@ -1,0 +1,8 @@
+---
+- name: configure interface
+  hosts: core-rtr
+  gather_facts: false
+
+  roles:
+    - core-rtr-interface-desc
+

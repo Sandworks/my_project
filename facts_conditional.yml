@@ -1,0 +1,24 @@
+- name: a play for ios_facts
+  hosts: a4n-net
+  gather_facts: no
+  tasks:
+
+  - name: look at some facts
+    ios_facts:
+      gather_subset:
+      - hardware
+    when:
+      - ansible_network_os == 'cisco.ios.ios'
+
+  - name: look at some facts
+    nxos_facts:
+      gather_subset:
+      - hardware
+    when: ansible_network_os == 'cisco.nxox.nxos'
+
+  - name: show results
+    debug:
+      msg:
+      - "model: {{ ansible_net_model }}"
+      - "version: {{ ansible_net_version }}"
+    when: ansible_net_model is match("C9500.*")

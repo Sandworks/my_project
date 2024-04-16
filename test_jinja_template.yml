@@ -1,0 +1,12 @@
+---
+- name: test template for core-rtr01
+  hosts: core-rtr
+  gather_facts: false
+
+  tasks:
+
+  - name: test template
+    template:
+      src: template/mgmt.j2
+      dest: out/mgmt.out
+

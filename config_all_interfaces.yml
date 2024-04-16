@@ -1,0 +1,15 @@
+---
+- name: configure all interfaces
+  hosts: a4n-net
+  gather_facts: false
+
+  tasks:
+
+  - name: configure interfaces
+    include_role:
+      name: core-rtr-interface-desc
+
+  - name: display interfaces
+    include_role:
+      name: core-rtr-interface-show
+

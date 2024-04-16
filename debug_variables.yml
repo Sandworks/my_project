@@ -1,0 +1,11 @@
+---
+- name: a playboot to debug variables
+  hosts: core-rtr
+  gather_facts: no
+
+  tasks:
+
+  - name: debug variables {{ inventory_hostname }}
+    debug:
+      msg: "{{ inventory_hostname }}"
+

@@ -1,0 +1,14 @@
+hostname: core-rtr01
+ip domain name ansible4networking.com
+ip name-server 8.8.8.8
+ip name-server 8.8.4.4
+service timestamps log datatime
+service timestamps debug datatime
+logging 10.10.20.50
+logging trap 6
+access-list 1 permit 10.10.20.51 log
+access-list 1 permit 10.10.20.52 log
+snmp-server community ansible4networking RO 1
+access-list 110 permit tcp any any eq 22 log
+interface GigabitEthernet0/0
+ ip access-group 110 in

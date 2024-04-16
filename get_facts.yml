@@ -1,0 +1,17 @@
+---
+- name: get facts from all devices
+  hosts: a4n-net
+
+  tasks:
+
+  - name: gather facts
+    ios_facts:
+      gather_subset:
+        - all
+    register: facts_output
+
+  - name: save output
+    ansible.builtin.copy:
+      content: "{{ facts_output }}"
+      dest: out/facts.out
+

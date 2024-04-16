@@ -1,3 +1,12 @@
 ansible_connection: ansible.netcommon.network_cli
 ansible_network_os: cisco.ios.ios
-
+workstation_ipv4: 10.10.20.51/24
+controller_ipv4: 10.10.20.52/24
+domain_name: ansible4networking.com
+nameservers:
+- 8.8.8.8
+- 8.8.4.4
+syslog_ipv4: 10.10.20.50
+ro_community: ansible4networking
+ios_loglevel: 6
+  

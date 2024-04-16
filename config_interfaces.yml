@@ -1,0 +1,11 @@
+---
+- name: configure interface
+  hosts: core-rtr
+  gather_facts: false
+
+  tasks:
+
+    - name: configure interfaces on {{ inventory_hostname }}
+      cisco.ios.ios_interfaces:
+        config: "{{ interfaces }}"
+

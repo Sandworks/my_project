@@ -1,0 +1,10 @@
+interfaces:
+  - name: TenGigabitEthernet1/0/1
+    description: reserved
+  - name: TenGigabitEthernet1/0/2
+    description: reserved
+  - name: TenGigabitEthernet1/0/3
+    description: reserved
+  - name: Loopback0
+    description: Router-id
+

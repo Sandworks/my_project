@@ -1,0 +1,11 @@
+---
+# tasks file for core-rtr-interface-show
+- name: gather interface status
+  cisco.ios.ios_command:
+    commands: show interface status
+  register: output
+
+- name: display interface status
+  debug:
+    msg: "{{ output.stdout_lines }}"
+

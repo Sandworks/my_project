@@ -1,0 +1,6 @@
+---
+# tasks file for core-rtr-interface-desc
+- name: configure interfaces
+  cisco.ios.ios_interfaces:
+    config: "{{ interfaces }}"
+

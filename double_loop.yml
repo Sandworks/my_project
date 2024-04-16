@@ -1,0 +1,20 @@
+---
+- name: single loop
+  hosts: localhost
+  gather_facts: false
+  vars:
+    names:
+      - { firstname: 'James', surname: 'Sanders' }
+      - { firstname: 'Louise', surname: 'Sanders' }
+      - { firstname: 'Joshua', surname: 'Sanders' }
+      - { firstname: 'Daniel', surname: 'Sanders' }
+      - { firstname: 'Matthew', surname: 'Sanders' }
+  
+  tasks:
+
+  - name: first example
+    debug:
+      msg:
+        - "{{ item.firstname }} {{ item.surname }}"
+    loop: "{{ names }}"
+

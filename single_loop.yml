@@ -1,0 +1,15 @@
+---
+- name: single loop
+  hosts: localhost
+  gather_facts: false
+  vars:
+    names: ['James', 'Louise', 'Joshua', 'Daniel', 'Matthew']
+
+  tasks:
+
+  - name: test single loop
+    debug:
+      msg:
+        - "{{ item }}"
+    loop: "{{ names }}"
+
