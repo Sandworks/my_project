@@ -1,0 +1,29 @@
+a4n-net:
+  children:
+    a4n-rtr:
+    a4n-sw:
+
+a4n-rtr:
+  children:
+    core-rtr:
+    dist-rtr:
+
+a4n-sw:
+  children:
+    dist-sw:
+
+core-rtr:
+  hosts:
+    core-rtr01:
+      ansible_host: 10.239.5.117
+
+dist-rtr:
+  hosts:
+    dist-rtr01:
+      ansible_host: 10.239.5.112
+
+dist-sw:
+  hosts:
+    dist-sw01:
+      ansible_host: 10.239.5.114
+

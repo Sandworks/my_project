@@ -1,0 +1,16 @@
+---
+- name: show interfaces from all devices
+  hosts: a4n-net
+  gather_facts: false
+
+  tasks:
+
+  - name: gather interface status
+    cisco.ios.ios_command:
+      commands: show interface status
+    register: output
+
+  - name: display the interface status
+    debug:
+      msg: "{{ output.stdout_lines }}"
+
